@@ -7,7 +7,9 @@ public class Teste {
 		ControleRemoto controle = new ControleRemoto();
 		Scanner teclado = new Scanner(System.in);
 		
-		TV tv = new TV(0, 0);
+		int volume, canal;
+		
+		TV tv = new TV(1, 5);
 		
 		int seleciona;
 	    do {
@@ -39,7 +41,8 @@ public class Teste {
 
 		            } else if (tv.getLigado()) {
 		            	controle.aumentarVolume();
-		            	System.out.printf("Volume atual é %d", tv.getVolume());
+		            	volume = tv.getVolume();
+		            	System.out.printf("Volume atual é %d", volume);
 			        }    
 		            break;
 		            
@@ -49,7 +52,8 @@ public class Teste {
 
 		            } else if (tv.getLigado()) {
 		            	controle.diminuirVolume();
-		            	System.out.printf("Volume atual é %d", tv.getVolume());
+		            	volume = tv.getVolume();
+		            	System.out.printf("Volume atual é %d", volume);
 		            }	
 		            break;
 		            
@@ -59,7 +63,8 @@ public class Teste {
 	
             	} else if (tv.getLigado()) {
 	            		controle.aumentarCanal();
-	            		System.out.printf("Canal atual é %d", tv.getCanal());
+	            		canal = tv.getCanal();
+	            		System.out.printf("Canal atual é %d", canal);
 					}
 	            	break;
 	            	
@@ -69,7 +74,8 @@ public class Teste {
 
 	            	} else if (tv.getLigado()) {
             		controle.diminuirCanal();
-            		System.out.printf("Canal atual é %d", tv.getCanal());
+            		canal = tv.getCanal();
+            		System.out.printf("Canal atual é %d", canal);
 	            	}
 	            	break;
 	            	
