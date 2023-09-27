@@ -1,43 +1,65 @@
 package Televisao;
 
-public class TV {
-	private int volume, canal;
-	String marca;
-	boolean ligado;
+public class ControleRemoto {
+	int volumeMax = 100;
+	int canalMax = 50;
 
-	public TV(int volume, int canal) {
-		this.volume = volume;
-		this.canal = canal;
+	TV tv = new TV(1, 0);
+	
+	void aumentarVolume() {
+		int volume = tv.getVolume();
+		if (volume < volumeMax || volume == 0) {
+			volume++;
+			tv.setVolume(volume);
+		} 
+		else {
+			System.out.println("Volume já está no máximo.");
+		}
 	}
 	
-	 public int getVolume() {
-		 return volume;
-	 }
-
-	public void setVolume(int volume) {
-		this.volume = volume;
+	void diminuirVolume() {
+		int volume = tv.getVolume();
+		if (volume > 0) {
+			volume--;
+			tv.setVolume(volume);
+		} 
+		else {
+			System.out.println("Volume já está no mínimo.");
+		}
 	}
 	
-	public int getCanal() {
-		return canal;
+	void aumentarCanal() {
+		int canal = tv.getCanal();
+		if (canal < canalMax) {
+			canal++;
+			tv.setCanal(canal);
+		} 
+		else {
+			System.out.println("Não possuem canais para esta direção.");
+		}
 	}
 	
-	public void setCanal(int canal) {
-		this.canal = canal;
+	void diminuirCanal() {
+		int canal = tv.getCanal();
+		if (canal > 1) {
+			canal--;
+			tv.setCanal(canal);
+		} 
+		else {
+			System.out.println("Não possuem canais para esta direção.");
+		}
 	}
 	
-	public String getMarca() {
-		return marca;
-	}
-
-	public boolean getLigado() {
+	boolean ligarTV() {
+		boolean ligado = tv.getLigado();
+		if(!ligado) {
+			ligado = true;
+			tv.setLigado(ligado);
+		} else {
+			ligado = false;
+			tv.setLigado(ligado);
+		}
 		return ligado;
 	}
-	
-	public void setLigado(boolean ligado) {
-		this.ligado = ligado;
-	}
-	
-	
-	
+
 }
