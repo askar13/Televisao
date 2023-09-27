@@ -4,7 +4,7 @@ public class ControleRemoto {
 	int volumeMax = 100;
 	int canalMax = 50;
 
-	TV tv = new TV(1, 0);
+	TV tv = new TV(0, 0);
 	
 	void aumentarVolume() {
 		int volume = tv.getVolume();
